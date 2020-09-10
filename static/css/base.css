@@ -26,3 +26,25 @@ body {
 .main-logo-link {
     width: fit-content;
 }
+
+/*===========================Media Queries===========================*/
+
+/* larger container for xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+/*fixed top navbar for medium and higher*/
+@media (min-width: 1200px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000
+    }
+    .header-container{
+        padding-top:164px;
+    }
+}
