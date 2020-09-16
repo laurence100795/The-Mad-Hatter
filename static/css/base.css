@@ -1,13 +1,15 @@
+/*page height definition*/
 html {
     height: 100%;
 }
 
+/*main body styling*/
 body {
-    background-color: rgb(48, 48, 48);
+    background-color: white;
     background-size: cover;
     height: calc(100vh - 164px);
     color: rgb(132, 4, 206);
-    font-family: 'Lato';
+    font-family: 'Nunito';
 }
 
 /* from Bulma (Keeps icons correctly and consistent across the site)*/
@@ -19,12 +21,43 @@ body {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
+/*header background colour change*/
+.header-styling {
+    background-color: #333333;
 }
 
-.main-logo-link {
+/*dropdown menu text color change*/
+.dropdown-style {
+    color: rgb(136, 0, 214);
+}
+
+/*dropdown menu item color change*/
+.topnav-icon-style {
+    color: rgb(136, 0, 214);
+}
+
+/*dropdown logo text color change*/
+.logo-font {
+    text-transform: uppercase;
+    color: rgb(136, 0, 214);
+}
+/*site logo styling*/
+.main-logo-nav {
     width: fit-content;
+    text-transform: uppercase;
+    color: rgb(136, 0, 214);
+    font-weight: 600;
+    font-size: 30px;
+}
+
+/*search box stlying*/
+.input-style {
+    background-color: #444;
+    color: rgb(136, 0, 214);
+}
+/*search box button styling*/
+.nav-search {
+    background-color: black;
 }
 
 /*===========================Media Queries===========================*/
@@ -46,5 +79,15 @@ body {
     }
     .header-container{
         padding-top:164px;
+    }
+}
+
+/*Small screen navbar will fit inline*/
+@media (max-width: 400px) {
+    .fa-lg {
+        font-size: 1em !important;
+    }
+    .list-inline-item .nav-link {
+        padding: 0;
     }
 }
