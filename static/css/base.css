@@ -60,6 +60,21 @@ body {
     background-color: black;
 }
 
+/*Homepage background slide image styling*/
+.SlideImage { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000045;
+    object-fit: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
 /*===========================Media Queries===========================*/
 
 /* larger container for xl screens */
