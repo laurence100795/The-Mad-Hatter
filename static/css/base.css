@@ -5,9 +5,9 @@ html {
 
 /*main body styling*/
 body {
-    background-color: white;
+    background-color: black;
+    height: 100%;
     background-size: cover;
-    height: calc(100vh - 164px);
     color: rgb(132, 4, 206);
     font-family: 'Nunito';
 }
@@ -59,22 +59,17 @@ body {
 .nav-search {
     background-color: black;
 }
-
-/*Homepage background slide image styling*/
-.SlideImage { 
-    position: fixed;
-    top: 140px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000045;
-    object-fit: cover;
-    background-attachment: fixed;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+/* Footer positioning (pushes to bottom of page)*/
+.content-wrapper {
+    min-height: 100%;
 }
 
+/* Footer Stlying */
+.footer {
+    background-color: #333333;
+    height: 50px;
+    position: relative;
+}
 /*===========================Media Queries===========================*/
 
 /* larger container for xl screens */
@@ -97,13 +92,6 @@ body {
     }
 }
 
-/*Homepage Background positioning*/
-@media (max-width: 991px) {
-    .SlideImage {
-        top: 84px;
-    }
-}
-
 /*Small screen navbar will fit inline*/
 @media (max-width: 400px) {
     .fa-lg {
@@ -111,9 +99,5 @@ body {
     }
     .list-inline-item .nav-link {
         padding: 0;
-    }
-    /*Homepage Background positioning*/
-    .SlideImage {
-        top: 68px;
     }
 }

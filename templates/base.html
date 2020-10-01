@@ -117,9 +117,13 @@
 	{% endif %}
 
     {% block page_header %}{% endblock %}
-
+    <div class="content-wrapper">
     {% block content %} {% endblock %}
-
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+        </div>
+    </div>
     {% block postloadjs %} {% endblock %}
 </body>
 
