@@ -13,12 +13,13 @@
     transition: opacity 1s ease-in-out;
 }
 
-/*Promo code container styling*/
+/*Promo code container postioning*/
 .home-promo-position {
     top: 300px;
     left: 50px;
 }
 
+/*Promo code container styling*/
 .home-promo-styling {
     background-color: black;
     height: fit-content;
@@ -26,6 +27,7 @@
     max-width: 500px;
 }
 
+/*Promo code text styling*/
 .home-promo-text {
     font-size: 28px;
     color: #fafafa;
@@ -54,5 +56,12 @@
     }
     .home-promo-text {
     font-size: 16px;
+    }
+}
+
+/*For Galaxy fold phones*/
+@media (max-width: 280px) {
+    .SlideImage {
+        top: 60px;
     }
 }

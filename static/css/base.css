@@ -50,6 +50,21 @@ body {
     font-size: 30px;
 }
 
+/*Logo hover styling correction*/
+.main-logo-nav:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #7c00c3;
+}
+
+/*Navigation hover styling correction*/
+.nav-link:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #7c00c3;
+    background-color: #333333;
+}
+
 /*search box stlying*/
 .input-style {
     background-color: #444;
@@ -66,9 +81,43 @@ body {
 
 /* Footer Stlying */
 .footer {
-    background-color: #333333;
+    background-color: #3c3c3c;
     height: 50px;
     position: relative;
+}
+
+/*Footer margin correction*/
+.footer-content {
+    margin: 0;
+    background-color: #333333
+}
+
+/*Footer default colour and height*/
+.footer-content div {
+    height: 50px;
+    background-color: #333333;
+}
+
+/*footer content stlying and postioning*/
+.footer-content div p {
+    margin-top: 15px;
+    margin-bottom: 0; 
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/*footer interactive content stlying*/
+.footer-content div p a {
+    text-decoration: none;
+    color: rgb(136, 0, 214);
+}
+
+/*footer interactive content active effect*/
+.footer-content div p a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fafafa;
+    font-weight: 900;
 }
 /*===========================Media Queries===========================*/
 
@@ -90,6 +139,11 @@ body {
     .header-container{
         padding-top:164px;
     }
+    .footer-content div p{
+    margin-top: 11px;
+    font-size: 18px;
+    font-weight: 600;
+}
 }
 
 /*Small screen navbar will fit inline*/
@@ -99,5 +153,21 @@ body {
     }
     .list-inline-item .nav-link {
         padding: 0;
+    }
+}
+
+/*For Galaxy fold phones*/
+@media (max-width: 280px) {
+    
+    .footer-content div p{
+    margin-top: 11px;
+    font-size: 14px;
+    font-weight: 600;
+    }
+    .fa-lg {
+    font-size: 0.8em !important;
+    }
+    .navbar p {
+        font-size: 12px;
     }
 }

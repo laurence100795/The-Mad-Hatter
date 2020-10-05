@@ -42,7 +42,7 @@
 <body>
 	<header class="container-fluid fixed-top header-styling">
         <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 ly-lg-0 text-center">
+            <div class="col-12 col-lg-4 my-auto py-1 ly-lg-0 text-center ">
                 <a href="" class="main-logo-nav nav-link">The Mad Hatter</a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 ly-lg-0 text-center">
@@ -121,7 +121,13 @@
     {% block content %} {% endblock %}
     </div>
     <div class="footer">
-        <div class="footer-content">
+        <div class="footer-content row justify-content-between">
+            <div class="col-lg-4 col-12">
+                <p class="text-center">Tested and created by <a class="text-uppercase" target="_blank" href="https://github.com/laurence100795">©L.A.D Design</a></p>
+            </div>
+            <div class="col-lg-4 col-12">
+                <p class="text-center">Site Error reporting <a class="text-uppercase" href="#">Click Here</a></p>
+            </div>
         </div>
     </div>
     {% block postloadjs %} {% endblock %}
