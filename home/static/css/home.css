@@ -34,6 +34,19 @@
     text-align: center;
 }
 
+/*Promo copy button styling*/
+.promo-button {
+    background-color: #fafafa;
+    color: #212121;
+    font-weight: 600;
+}
+
+/*Promo copy button hover effect*/
+.promo-button:hover {
+    background-color: #7c00c3;
+    color: #fafafa;
+}
+
 /*===========================Media Queries===========================*/
 
 /*Homepage Background positioning medium screen*/

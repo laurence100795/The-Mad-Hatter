@@ -8,7 +8,7 @@ body {
     background-color: black;
     height: 100%;
     background-size: cover;
-    color: rgb(132, 4, 206);
+    color: #7c00c3;
     font-family: 'Nunito';
 }
 
@@ -28,24 +28,24 @@ body {
 
 /*dropdown menu text color change*/
 .dropdown-style {
-    color: rgb(136, 0, 214);
+    color:#7c00c3;
 }
 
 /*dropdown menu item color change*/
 .topnav-icon-style {
-    color: rgb(136, 0, 214);
+    color: #7c00c3;
 }
 
 /*dropdown logo text color change*/
 .logo-font {
     text-transform: uppercase;
-    color: rgb(136, 0, 214);
+    color: #7c00c3;
 }
 /*site logo styling*/
 .main-logo-nav {
     width: fit-content;
     text-transform: uppercase;
-    color: rgb(136, 0, 214);
+    color: #7c00c3;
     font-weight: 600;
     font-size: 30px;
 }
@@ -68,7 +68,7 @@ body {
 /*search box stlying*/
 .input-style {
     background-color: #444;
-    color: rgb(136, 0, 214);
+    color: #7c00c3;
 }
 /*search box button styling*/
 .nav-search {
@@ -89,7 +89,7 @@ body {
 /*Footer margin correction*/
 .footer-content {
     margin: 0;
-    background-color: #333333
+    background-color: #252525
 }
 
 /*Footer default colour and height*/
@@ -109,7 +109,7 @@ body {
 /*footer interactive content stlying*/
 .footer-content div p a {
     text-decoration: none;
-    color: rgb(136, 0, 214);
+    color:#7c00c3;
 }
 
 /*footer interactive content active effect*/
