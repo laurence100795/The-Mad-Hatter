@@ -21,6 +21,11 @@ body {
     width: 1.5rem;
 }
 
+/*Pushes content down from below the header*/
+.header-container { 
+    padding-top:164px;
+}
+
 /*header background colour change*/
 .header-styling {
     background-color: #333333;
@@ -136,9 +141,7 @@ body {
         left: 0;
         z-index: 1000
     }
-    .header-container{
-        padding-top:164px;
-    }
+
     .footer-content div p{
     margin-top: 11px;
     font-size: 18px;
