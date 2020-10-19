@@ -1,0 +1,45 @@
+/* removes border from hover */
+.card {
+    border: 0;
+    margin-bottom: 20px;
+}
+
+.product_divider {
+    border-color: #fafafa;
+    width: 85%;
+    height: 2px;
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+/* image hover description styling */
+.product_description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  border-color: #000;
+  transition: ease-in-out .5s;
+}
+
+/* image hover effect */
+.img__wrap:hover .product_description {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*===========================Media Queries===========================*/
+
+/* Stops hover effect for tablet size and below */
+@media (max-width: 991px) {
+    .img__wrap:hover .product_description {
+        opacity: 0;
+    }
+}
