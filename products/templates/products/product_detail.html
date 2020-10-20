@@ -17,7 +17,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-12 col-md-8 img-container">
                 {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -28,8 +28,8 @@
                     </a>
                 {% endif %}
             </div>
-            <div class="col-4 product-info">
-                <h1 class="text-center pt-2 mb-3">{{ product.name }}</h1>
+            <div class="col-12 col-md-4 product-info border rounded">
+                <h1 class="product-title pt-2 mb-3">{{ product.name }}</h1>
                 <div class="text-right mb-2 pr-2">
                     <h2 class="lead mb-0 font-weight-bold mb-2">${{ product.price }}</h2>
                     {% if product.rating %}
@@ -38,6 +38,7 @@
                         <h3 class="mb-2">No Rating</h3>
                     {% endif %}
                     <p class="mb-2">{{ product.description }}</p>
+                    <button class="btn return-button"><a href="{% url 'products' %}">Return</a></button>
                 </div>
             </div>
         </div>

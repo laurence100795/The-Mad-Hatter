@@ -21,6 +21,20 @@ body {
     width: 1.5rem;
 }
 
+/* removes default a tag styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* removes default a tag hover styles */
+a:hover 
+{
+     text-decoration: none; 
+     cursor: pointer;
+     color: inherit;  
+}
+
 /*Pushes content down from below the header*/
 .header-container { 
     padding-top:164px;

@@ -51,8 +51,48 @@
 
 .img-fluid {
     max-width: 610px;
+    padding-right: 10px;
+}
+
+.product-title {
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 .product-info {
     background-color: #333333;
+    border-color: #333333 !important;
+}
+
+/*Return button styling*/
+.return-button {
+    text-decoration: none;
+    background-color:#444444;
+    color: #7c00c3;
+    font-weight: 600;
+    padding: 2px 5px;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+}
+
+/*Return button hover effect*/
+.return-button:hover,
+.return-button:focus,
+.return-button:active {
+    background-color: #7c00c3;
+    color: #fafafa;
+}
+
+/*===========================Media Queries===========================*/
+
+/* Stops hover effect for tablet size and below */
+@media (max-width: 991px) {
+    .return-button {
+        position: unset;
+    }
+    .img-container {
+        margin-bottom: 20px;
+    }
 }
