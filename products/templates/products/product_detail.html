@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -14,9 +15,31 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col">{{ product.name }}</div>
+            <div class="col-8">
+                {% if product.image %}
+                    <a href="{{ product.image.url }}" target="_blank">
+                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                {% else %}
+                    <a href="">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}No-Image-Available.png" alt="{{ product.name }}">
+                    </a>
+                {% endif %}
+            </div>
+            <div class="col-4 product-info">
+                <h1 class="text-center pt-2 mb-3">{{ product.name }}</h1>
+                <div class="text-right mb-2 pr-2">
+                    <h2 class="lead mb-0 font-weight-bold mb-2">${{ product.price }}</h2>
+                    {% if product.rating %}
+                        <h3 class="mb-2"><i class="fas fa-star mr-1"></i>{{ product.rating}}/5</h3>
+                    {% else %}
+                        <h3 class="mb-2">No Rating</h3>
+                    {% endif %}
+                    <p class="mb-2">{{ product.description }}</p>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

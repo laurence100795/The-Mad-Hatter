@@ -1,3 +1,5 @@
+/*===========================Products Page===========================*/
+
 /* removes border from hover */
 .card {
     border: 0;
@@ -42,4 +44,15 @@
     .img__wrap:hover .product_description {
         opacity: 0;
     }
+}
+
+
+/*===========================Products Info Page===========================*/
+
+.img-fluid {
+    max-width: 610px;
+}
+
+.product-info {
+    background-color: #333333;
 }
