@@ -19,14 +19,12 @@
                 Beanies
             </a>
             <div class="dropdown-menu border-0 header-styling" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item dropdown-style">All Beanies</a>
-                <a href="" class="dropdown-item dropdown-style">Traditional</a>
-                <a href="" class="dropdown-item dropdown-style">Cuffed</a>
-                <a href="" class="dropdown-item dropdown-style">Long</a>
-                <a href="" class="dropdown-item dropdown-style">Trapper</a>
-                <a href="" class="dropdown-item dropdown-style">Pom</a>
-                <a href="" class="dropdown-item dropdown-style">Price Order</a>
-                <a href="" class="dropdown-item dropdown-style">Rating Order</a>
+                <a href="{% url 'products' %}?category=trapper,long,cuffed,traditional,pom" class="dropdown-item dropdown-style">All Beanies</a>
+                <a href="{% url 'products' %}?category=traditional" class="dropdown-item dropdown-style">Traditional</a>
+                <a href="{% url 'products' %}?category=cuffed" class="dropdown-item dropdown-style">Cuffed</a>
+                <a href="{% url 'products' %}?category=long" class="dropdown-item dropdown-style">Long</a>
+                <a href="{% url 'products' %}?category=trapper" class="dropdown-item dropdown-style">Trapper</a>
+                <a href="{% url 'products' %}?category=pom" class="dropdown-item dropdown-style">Pom</a>
             </div>
         </li>
 
@@ -35,13 +33,11 @@
                 Hats
             </a>
             <div class="dropdown-menu border-0 header-styling " aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item dropdown-style">All Hats</a>
-                <a href="" class="dropdown-item dropdown-style">Fedora</a>
-                <a href="" class="dropdown-item dropdown-style">Tribly</a>
-                <a href="" class="dropdown-item dropdown-style">Bowler</a>
-                <a href="" class="dropdown-item dropdown-style">Straw</a>
-                <a href="" class="dropdown-item dropdown-style">Price Order</a>
-                <a href="" class="dropdown-item dropdown-style">Rating Order</a>
+                <a href="{% url 'products' %}?category=fedora,straw,bowler,trilby" class="dropdown-item dropdown-style">All Hats</a>
+                <a href="{% url 'products' %}?category=fedora" class="dropdown-item dropdown-style">Fedora</a>
+                <a href="{% url 'products' %}?category=trilby" class="dropdown-item dropdown-style">Tribly</a>
+                <a href="{% url 'products' %}?category=bowler" class="dropdown-item dropdown-style">Bowler</a>
+                <a href="{% url 'products' %}?category=straw" class="dropdown-item dropdown-style">Straw</a>
             </div>
         </li>
 
@@ -50,14 +46,12 @@
                 Caps
             </a>
             <div class="dropdown-menu border-0 header-styling" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item dropdown-style">All Caps</a>
-                <a href="" class="dropdown-item dropdown-style">Snapback</a>
-                <a href="" class="dropdown-item dropdown-style">Flexfit</a>
-                <a href="" class="dropdown-item dropdown-style">Fitted</a>
-                <a href="" class="dropdown-item dropdown-style">Adjustable</a>
-                <a href="" class="dropdown-item dropdown-style">Flat Caps</a>
-                <a href="" class="dropdown-item dropdown-style">Price Order</a>
-                <a href="" class="dropdown-item dropdown-style">Rating Order</a>
+                <a href="{% url 'products' %}?category=flat,snapback,flexfit,adjustable,fitted" class="dropdown-item dropdown-style">All Caps</a>
+                <a href="{% url 'products' %}?category=snapback" class="dropdown-item dropdown-style">Snapback</a>
+                <a href="{% url 'products' %}?category=flexfit" class="dropdown-item dropdown-style">Flexfit</a>
+                <a href="{% url 'products' %}?category=fitted" class="dropdown-item dropdown-style">Fitted</a>
+                <a href="{% url 'products' %}?category=adjustable" class="dropdown-item dropdown-style">Adjustable</a>
+                <a href="{% url 'products' %}?category=flat" class="dropdown-item dropdown-style">Flat Caps</a>
             </div>
         </li>
 

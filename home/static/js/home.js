@@ -18,6 +18,7 @@ function nextSlide() {
 /*BackGround Slider Animation*/
 
 /*Copy Promotion Code*/
+
 document.getElementById("promoCopy").addEventListener("click", copy_promo);
 
 function copy_promo() {
@@ -29,4 +30,5 @@ function copy_promo() {
     document.execCommand("Copy");
     textArea.remove();
 }
+
 /*Copy Promotion Code*/

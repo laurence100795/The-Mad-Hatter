@@ -46,7 +46,7 @@
                 <a href="{% url 'home' %}" class="main-logo-nav nav-link">The Mad Hatter</a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 ly-lg-0 text-center">
-                <form method="get" action="">
+                <form method="get" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input type="text" class="form-control border-0 rounded-0 input-style" name="search" placeholder="Search for a hat!">
                         <div class="input-group-append">
@@ -71,7 +71,7 @@
                         <div class="dropdown-menu border-0 header-styling" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="dropdown-item dropdown-style">Product Management</a>
+                                    <a href="" class="dropdown-item dropdown-style">Product Management</a>
                                 {% endif %}
                                 <a href="" class="dropdown-item dropdown-style">My Profile</a>
                                 <a href="" class="dropdown-item dropdown-style">My Orders</a>
