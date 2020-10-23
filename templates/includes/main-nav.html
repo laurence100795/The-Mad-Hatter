@@ -2,12 +2,31 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         
-        <li class="nav-item dropdown d-lg-none">
+        <li class="nav-item d-lg-none">
             <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'home' %}">
                 Home
             </a>
         </li>
         
+        <li class="nav-item dropdown d-lg-none">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Account
+            </a>
+            <div class="dropdown-menu border-0 header-styling" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-style">Product Management</a>
+                    {% endif %}
+                    <a href="" class="dropdown-item dropdown-style">My Profile</a>
+                    <a href="" class="dropdown-item dropdown-style">My Orders</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-style">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item dropdown-style">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item dropdown-style">Login</a>
+                {% endif %}
+            </div>
+        </li>
+
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'products' %}" id="all-products-link">
                 All Products
@@ -18,13 +37,15 @@
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="beanies-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Beanies
             </a>
-            <div class="dropdown-menu border-0 header-styling" aria-labelledby="all-products-link">
+            <div class="dropdown-menu border-0 header-styling" aria-labelledby="beanies-link">
                 <a href="{% url 'products' %}?category=trapper,long,cuffed,traditional,pom" class="dropdown-item dropdown-style">All Beanies</a>
                 <a href="{% url 'products' %}?category=traditional" class="dropdown-item dropdown-style">Traditional</a>
                 <a href="{% url 'products' %}?category=cuffed" class="dropdown-item dropdown-style">Cuffed</a>
                 <a href="{% url 'products' %}?category=long" class="dropdown-item dropdown-style">Long</a>
                 <a href="{% url 'products' %}?category=trapper" class="dropdown-item dropdown-style">Trapper</a>
                 <a href="{% url 'products' %}?category=pom" class="dropdown-item dropdown-style">Pom</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc&category=trapper,long,cuffed,traditional,pom" class="dropdown-item dropdown-style">Sort by price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc&category=trapper,long,cuffed,traditional,pom" class="dropdown-item dropdown-style">Sort by rating</a>
             </div>
         </li>
 
@@ -32,12 +53,14 @@
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="hats-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hats
             </a>
-            <div class="dropdown-menu border-0 header-styling " aria-labelledby="clothing-link">
+            <div class="dropdown-menu border-0 header-styling " aria-labelledby="hats-link">
                 <a href="{% url 'products' %}?category=fedora,straw,bowler,trilby" class="dropdown-item dropdown-style">All Hats</a>
                 <a href="{% url 'products' %}?category=fedora" class="dropdown-item dropdown-style">Fedora</a>
                 <a href="{% url 'products' %}?category=trilby" class="dropdown-item dropdown-style">Tribly</a>
                 <a href="{% url 'products' %}?category=bowler" class="dropdown-item dropdown-style">Bowler</a>
                 <a href="{% url 'products' %}?category=straw" class="dropdown-item dropdown-style">Straw</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc&category=fedora,straw,bowler,trilby" class="dropdown-item dropdown-style">Sort by price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc&category=fedora,straw,bowler,trilby" class="dropdown-item dropdown-style">Sort by rating</a>
             </div>
         </li>
 
@@ -52,6 +75,8 @@
                 <a href="{% url 'products' %}?category=fitted" class="dropdown-item dropdown-style">Fitted</a>
                 <a href="{% url 'products' %}?category=adjustable" class="dropdown-item dropdown-style">Adjustable</a>
                 <a href="{% url 'products' %}?category=flat" class="dropdown-item dropdown-style">Flat Caps</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc&category=flat,snapback,flexfit,adjustable,fitted" class="dropdown-item dropdown-style">Sort by price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc&category=flat,snapback,flexfit,adjustable,fitted" class="dropdown-item dropdown-style">Sort by Rating</a>
             </div>
         </li>
 
