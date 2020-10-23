@@ -29,7 +29,10 @@
                 {% endif %}
             </div>
             <div class="col-12 col-md-4 product-info border rounded">
-                <h1 class="product-title pt-2 mb-3">{{ product.name }}</h1>
+                <h1 class="product-title pt-2 mb-1">{{ product.name }}</h1>
+                {% if product.category %}
+                    <p class="lead mb-0 font-weight-bold text-center mb-4">{{ product.category.friendly_name }}</p>
+                {% endif %}
                 <div class="text-right mb-2 pr-2">
                     <h2 class="lead mb-0 font-weight-bold mb-2">${{ product.price }}</h2>
                     {% if product.rating %}

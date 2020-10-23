@@ -16,25 +16,26 @@
 
 /* image hover description styling */
 .product_description {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  color: #fff;
-  visibility: hidden;
-  opacity: 0;
-  border-color: #000;
-  transition: ease-in-out .5s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    border-color: #000;
+    transition: ease-in-out .5s;
+    object-fit: cover;
 }
 
 /* image hover effect */
 .img__wrap:hover .product_description {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
 /*===========================Media Queries===========================*/
@@ -56,7 +57,7 @@
 
 .product-title {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 .product-info {
