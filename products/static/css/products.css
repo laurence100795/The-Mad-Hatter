@@ -38,6 +38,34 @@
     opacity: 1;
 }
 
+/* Product page top scroller colour */
+.fa-chevron-circle-up{
+    color:#fafafa96;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+/* Product page top scroller positioning */
+.TopScroller {
+	position:fixed;
+    bottom: 120px;
+    right: -100px;
+}
+
+/* Product page top scroller appear animation */
+.TaketoTop { 
+  animation-name: ScrollerAppear;
+  animation-duration: 1.5s; 
+  animation-fill-mode: forwards;
+  
+}
+
+/* Product page top scroller appear animation specifications */
+@keyframes ScrollerAppear {
+  from {right: -100px;}
+  to {right: 50px;}
+}
+
 /*===========================Media Queries===========================*/
 
 /* Stops hover effect for tablet size and below */
@@ -95,5 +123,12 @@
     }
     .img-container {
         margin-bottom: 20px;
+    }
+    @keyframes ScrollerAppear {
+        from {right: -100px;}
+        to {right: 20px;}
+    }
+    .fa-4x {
+        font-size: 2.5em!important;
     }
 }

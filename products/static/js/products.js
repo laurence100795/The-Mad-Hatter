@@ -20,3 +20,22 @@ $('#sort-selector').change(function() {
     }
 })
 /* loads Product page selection box options */
+
+/* Srcoller Appear */
+window.onscroll = function() {ScrollFunction()};
+
+function ScrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("Scroller").className = "TopScroller TaketoTop";
+  } else {
+    document.getElementById("Scroller").className = "TopScroller";
+  }
+}
+/* Srcoller Appear */
+
+/* Srcoller Position Change */
+function TakeToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+/* Srcoller Position Change */
