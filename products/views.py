@@ -39,7 +39,7 @@ def all_products(request):  # view to show all products
                 messages.error(request, "You didn't hit any matches")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(category__friendly_name__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
