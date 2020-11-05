@@ -45,18 +45,17 @@ $('.decrement-qty').click(function(e) {
 // update quantity on click 
 $('.update-link').click(function(e) {
     var form = $(this).prev('.update-form');
-    form.sumbit();
+    form.submit();
 })
 
 // remove products on click
-$('.remove-link').click(function(e) {
-    var csrfToken = "{{ csrf_token }}";
-    var itemId = $(this).attr('id').split(remove_)[1];
-    var url = `/bag/remove/${itemId}`
-    var data = {'csrfmiddlewaretoken': csrfToken}
+$('.remove-item').click(function(e) {
+    var itemId = $(this).attr('id').split('remove_')[1];
+    var url = `/bag/remove/${itemId}/`;
+    var data = {'csrfmiddlewaretoken': csrfToken};
 
     $.post(url, data)
      .done(function() {
-         location.reload();
+            location.reload();
      });
 })
