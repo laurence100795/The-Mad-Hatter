@@ -25,6 +25,9 @@ class Order(models.Model):
                                       null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2,
                                       null=False, default=0)
+    original_bag = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.TextField(max_length='254',
+                                  null=False, blank=False, default='')
 
     def _generate_order_number(self):
         # Generate a random order number
@@ -34,7 +37,8 @@ class Order(models.Model):
         # Update grand total each line item that is added.
         # Accounting for delivery costs.
 
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
