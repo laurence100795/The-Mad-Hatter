@@ -200,6 +200,47 @@ a:hover
 .allauth-btn:hover {
     background-color: #7c00c3 !important;
     color: #fafafa !important;
+}
+
+/*===========================Custom Product Form Widget===========================*/
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.widget-span {
+    background-color: #3c3c3c;
+    color: #7c00c3 !important;
+    transition: ease-in-out 0.5s;
+}
+
+.widget-span:hover {
+    background-color: #7c00c3;
+    color: #fafafa !important;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #7c00c3;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #7c00c3;
+    border-color: #7c00c3;
+    border-radius: 0;
+}
+
 
 /*===========================Media Queries===========================*/
 
