@@ -1,0 +1,45 @@
+<!doctype html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="text-center">
+                <h1>Email Submission</h1>
+                <p>Having issues with your order? Having difficulty logging on? there is an issue with the website?</p>
+                <p>Please send us an email and we'll look into it and get back to you.</p>
+            </div>
+            <form method="post" action="{% url 'email_page' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Subject</label>
+                    <input type="subject" class="form-control" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5" placeholder="Please fill in..." required></textarea>
+                </div>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
