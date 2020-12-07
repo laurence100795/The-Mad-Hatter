@@ -18,7 +18,7 @@
                         <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-style">Product Management</a>
                     {% endif %}
                     <a href="{% url 'profile' %}" class="dropdown-item dropdown-style">My Profile</a>
-                    <a href="" class="dropdown-item dropdown-style">My Orders</a>
+                    <a href="{% url 'order_page' %}" class="dropdown-item dropdown-style">My Orders</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-style">Logout</a>
                 {% else %}
                     <a href="{% url 'account_signup' %}" class="dropdown-item dropdown-style">Register</a>

@@ -17,22 +17,31 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile information updated')
         else:
-            messages.error(request, 'Update failed, please ensure form is valid.')
+            messages.error(request, 'Update failed, please \
+                ensure form is valid.')
     else:
         form = UserProfileForm(instance=profile)
 
-    orders = profile.orders.all
     template = 'profiles/profile.html'
     context = {
         'form': form,
-        'orders': orders,
-        'on_profile_page': True,
     }
 
     return render(request, template, context)
 
 
 @login_required
+def order_page(request):
+    profile = get_object_or_404(UserProfile, user=request.user)
+    orders = profile.orders.all
+
+    context = {
+        'orders': orders,
+    }
+
+    return render(request, 'profiles/orders.html', context)
+
+
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
