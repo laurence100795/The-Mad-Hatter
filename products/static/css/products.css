@@ -89,8 +89,8 @@
 }
 
 .product-info {
-    background-color: #333333;
-    border-color: #333333 !important;
+    background-color: #222222;
+    border-color: #222222 !important;
 }
 
 /*Return button styling*/
@@ -109,6 +109,16 @@
 .return-button:active {
     background-color: #7c00c3;
     color: #fafafa;
+}
+
+/*===========================Edit/Add Product Page===========================*/
+
+.product-container-style {
+    background-color: #222222;
+}
+
+.product-style-hr {
+    border-color: #7c00c3;
 }
 
 /*===========================Media Queries===========================*/

@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -16,16 +16,16 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Product Management</h2>
-                <h5 class="text-muted">Edit a Product</h5>
-                <hr>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 product-container-style">
+                <hr class="product-style-hr">
+                <h2 class="logo-font mb-4 text-center font-weight-bold">Product Management</h2>
+                <h5>Edit a Product</h5>
+                <hr class="product-style-hr">
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 product-container-style">
                 <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -36,12 +36,13 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-white rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-white rounded-0" type="submit">Update Product</button>
+                        <a class="btn btn-sec rounded-0" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-pri rounded-0" type="submit">Update Product</button>
                     </div>
                 </form>
             </div>
         </div>
+        <hr>
     </div>
 {% endblock %}
 

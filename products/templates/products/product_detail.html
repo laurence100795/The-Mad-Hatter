@@ -74,18 +74,17 @@
                             </div>
 
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                <input type="submit" class="btn btn-pri rounded-0 text-uppercase mt-2" value="Add to Bag">
+                                <a href="{% url 'products' %}" class="btn btn-sec rounded-0 mt-2">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-                    <button class="btn return-button"><a href="{% url 'products' %}">Return</a></button>
                 </div>
             </div>
         </div>

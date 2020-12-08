@@ -8,7 +8,7 @@ body {
     background-color: black;
     height: 100%;
     background-size: cover;
-    color: #7c00c3;
+    color: #fafafa;
     font-family: 'Nunito';
 }
 
@@ -42,7 +42,7 @@ a:hover
 
 /*header background colour change*/
 .header-styling {
-    background-color: #333333;
+    background-color: #222222;
 }
 
 /*dropdown menu text color change*/
@@ -81,7 +81,7 @@ a:hover
     text-decoration: none;
     cursor: pointer;
     color: #7c00c3;
-    background-color: #333333;
+    background-color: #222222;
 }
 
 /*search box stlying*/
@@ -93,6 +93,33 @@ a:hover
 .nav-search {
     background-color: black;
 }
+
+/*primary button style*/
+.btn-pri {
+    background-color: #7c00c3;
+    color: #fafafa;
+    transition: 1s;
+}
+
+.btn-pri:hover,
+.btn-pri:active {
+    background-color: #fafafa;
+    color: #7c00c3;
+}
+
+/*secondary button style*/
+.btn-sec {
+    background-color: #000;
+    color: #7c00c3;
+    transition: 1s;
+}
+
+.btn-sec:hover,
+.btn-sec:active {
+    background-color: #fafafa;
+    color: #000;
+}
+
 /* Footer positioning (pushes to bottom of page)*/
 .content-wrapper {
     min-height: 100%;
@@ -108,13 +135,13 @@ a:hover
 /*Footer margin correction*/
 .footer-content {
     margin: 0;
-    background-color: #252525
+    background-color: #111111
 }
 
 /*Footer default colour and height*/
 .footer-content div {
     height: 50px;
-    background-color: #333333;
+    background-color: #222222;
 }
 
 /*footer content stlying and postioning*/
@@ -178,7 +205,7 @@ a:hover
 
 /*Promo copy button styling*/
 .allauth-btn {
-    background-color: #333333 !important;
+    background-color: #222222 !important;
     color: #fafafa !important;
     font-weight: 600;
     display: inline-block;
@@ -220,14 +247,14 @@ a:hover
 }
 
 .widget-span {
-    background-color: #3c3c3c;
-    color: #7c00c3 !important;
+    background-color: #7c00c3;
+    color: #fafafa !important;
     transition: ease-in-out 0.5s;
 }
 
 .widget-span:hover {
-    background-color: #7c00c3;
-    color: #fafafa !important;
+    background-color: #fafafa;
+    color: #7c00c3 !important;
 }
 
 .custom-checkbox .custom-control-label::before {
