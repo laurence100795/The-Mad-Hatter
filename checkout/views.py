@@ -13,6 +13,7 @@ from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 
 import stripe
+import json
 
 
 def checkout(request):
