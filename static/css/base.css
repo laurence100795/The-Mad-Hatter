@@ -125,6 +125,11 @@ a:hover
     min-height: 100%;
 }
 
+/* Purple text colour Force */
+.pri-color {
+    color: #7c00c3;
+}
+
 /* Footer Stlying */
 .footer {
     background-color: #3c3c3c;
@@ -195,9 +200,32 @@ a:hover
 }
 
 .bag-notification-container {
-    height: 100px;
+    height: 120px;
+    background-color: #111111;
     overflow-x: hidden;
     overflow-y:auto;
+}
+
+/*===========================Custom Scrollbar===========================*/
+
+/* Scrollbar Width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: #fafafa; 
+}
+ 
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: #333333; 
+}
+
+/* Scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7c00c3; 
 }
 /*===========================AllAuth===========================*/
 
@@ -219,7 +247,7 @@ a:hover
     color: #aab7c4;
 }
 
-/*Promo copy button styling*/
+/*===========================Promo copy button styling===========================*/
 .allauth-btn {
     background-color: #222222 !important;
     color: #fafafa !important;

@@ -15,14 +15,14 @@
             <div class="bag-notification-container">
                 {% for item in bag_items %}
                     <div class="row">
-                    <div class="col-3 my-1">
+                    <div class="col-3 ml-1 my-1">
                         {% if item.product.image %}
                             <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                         {% else %}
                             <img class="w-100" src="{{MEDIA_URL}}No-Image-Available.png" alt="{{ item.product.name }}">
                         {% endif %}
                     </div>
-                    <div class="col-9 my-1">
+                    <div class="col-8 my-1">
                         <p>{{ item.product.name }}</p>
                         <p>Qty: {{ item.quantity }}</p>
                     </div>
@@ -30,15 +30,15 @@
                 {% endfor %}
                 <div class="row">
                     <div class="col">
-                        <p>Total{% if free_delivery_delta > 0 %} (Exc. delivery) {% endif %}
+                        <p class="ml-1">Total{% if free_delivery_delta > 0 %} (Exc. delivery) {% endif %}
                             <span>${{ grand_total|floatformat:2}}</span>
                         </p>
-                        <p>
+                        <p class="ml-1 pri-color">
                         {% if free_delivery_delta > 0 %}
-                            Spend <strong>${{ free_delivery_delta }}</strong> to get free delivery!
+                            <strong>Spend <span class="text-danger">${{ free_delivery_delta }}</span> to get free delivery!</strong>
                         {% endif %}
                         </p>
-                        <a href="{% url 'view_bag' %}">
+                        <a class=" ml-1 mb-1 btn btn-pri rounded-0" href="{% url 'view_bag' %}">
                             <span>Go To Secure Checkout</span>
                             <span><i class="fas fa-lock"></i></span>
                         </a>
