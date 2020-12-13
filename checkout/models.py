@@ -85,3 +85,10 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
+
+
+class Coupon(models.Model):
+    coupon_name = models.CharField(max_length=15, null=False)
+
+    def __str__(self):
+        return self.coupon_name
