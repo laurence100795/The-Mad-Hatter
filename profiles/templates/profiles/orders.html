@@ -1,6 +1,7 @@
 <!doctype html>
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
@@ -23,42 +24,87 @@
                 <hr>
             </div>
         </div>
-        <div class="row">
-            <div class="Col-12 col-lg-6">
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
-                        <thead>
-                                <tr>
-                                    <th>Order Number</th>
-                                    <th>Date</th>
-                                    <th>Items</th>
-                                    <th>Order Total</th>
-                                </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
-                                        {{ order.order_number|truncatechars:6 }}</a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small">
-                                                    {{ item.product.name }} x {{ item.quantity }}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td>${{ order.grand_total }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+        {% if orders %}
+            {% for order in orders %}
+            <button type="button" class="collapsible">{{ order.order_number|truncatechars:10 }} - {{ order.date }}</button>
+            <div class="content">
+                <h3 class="pt-2">Order Products</h3>
+                {% for item in order.lineitems.all %}
+                    <div class="row pt-1">
+                        <div class=".col-sm-12 col-md-3 mb-1">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                {% if item.product.image %}
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}No-Image-Available.png" alt="{{ product.name }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="col-sm-12 col-md-6 pt-1">
+                            <h4 class="my-0"><strong>{{ item.product.name }}</strong></h4>
+                            <p class="my-0">Qty: {{ item.quantity }}</p>
+                            <p class="my-0">Product Cost:  {{ item.product.price }}</p>
+                            <p class="my-0 small text-muted">Sku: {{ item.product.sku }}</p>
+                        </div>
+                        <div class="col-sm-12 col-md-3 text-left pt-1 pb-2">
+                            <p class="my-0">Total: ${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                <h3 class="pt-2">Order Details</h3>
+                <div class="div row">
+                    <div class="col-sm-12 col-md-6 pt-1">
+                        <p class="my-0">Full name: {{ order.full_name }}</p>
+                        <p class="my-0">Email: {{ order.email }}</p>
+                        <p class="my-0">Phone number: {{ order.phone_number }}</p>
+                        <p class="my-0">Order total: {{ order.order_total }}</p>
+                        <p class="my-0">Delivery total: {{ order.delivery_cost }}</p>
+                        <p class="my-0">Grand total: {{ order.grand_total }}</p>                        
+                    </div>
+                    <div class="col-sm-12 col-md-6 pt-1">
+                        <p class="my-0">Street address 1: {{ order.street_address1 }}</p>
+                        {% if order.street_address2 %}
+                            <p class="my-0">Street address 2: {{ order.street_address2 }}</p>
+                        {% else %}
+                            <p class="my-0">Street address 2: Not provided</p>
+                        {% endif %}
+                        {% if order.county %}
+                            <p class="my-0">County: {{ order.county }}</p>
+                        {% else %}
+                            <p class="my-0">County: Not provided</p>
+                        {% endif %}
+                        <p class="my-0">Town or city: {{ order.town_or_city }}</p>
+                        <p class="my-0">Postcode: {{ order.postcode }}</p>
+                        <p class="my-0">Country: {{ order.country }}</p>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <a href="{% url 'order_history' order.order_number %}" class="btn btn-pri rounded-0" title="{{ order.order_number }}">Original Order Summary</a>
                 </div>
             </div>
-        </div>
+            <hr>
+            {% endfor %}
+        {% else %}
+            <p>no orders No-Image-Available</p>
+        {% endif %}
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+        <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+            }
+        });
+        }
+        </script>
 {% endblock %}

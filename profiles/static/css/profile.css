@@ -23,3 +23,28 @@
 table {
     color: #7c00c3 !important;
 }
+
+.collapsible {
+    background-color: #7c00c3;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: ease-in-out 1s;
+}
+
+.active, .collapsible:hover {
+    background-color: #222222;
+    color: #fafafa;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #333333;
+}
