@@ -16,19 +16,3 @@ function nextSlide() {
 }
 
 /*BackGround Slider Animation*/
-
-/*Copy Promotion Code*/
-
-document.getElementById("promoCopy").addEventListener("click", copy_promo);
-
-function copy_promo() {
-    var copyText = document.getElementById("promoCode");
-    var textArea = document.createElement("textarea");
-    textArea.value = copyText.textContent;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("Copy");
-    textArea.remove();
-}
-
-/*Copy Promotion Code*/

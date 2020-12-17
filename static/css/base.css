@@ -344,6 +344,15 @@ a:hover
     }
 }
 
+@media (max-width: 550px) {
+    .main-logo-nav {
+        font-size: 16px;
+    }
+    .nav-item {
+        font-size: 14px;
+    }
+}
+
 /*Small screen navbar will fit inline*/
 @media (max-width: 400px) {
     .fa-lg {
@@ -351,6 +360,9 @@ a:hover
     }
     .list-inline-item .nav-link {
         padding: 0;
+    }
+    .main-logo-nav{
+        font-size: 14px;
     }
 }
 
@@ -367,5 +379,8 @@ a:hover
     }
     .navbar p {
         font-size: 12px;
+    }
+    .main-logo-nav{
+        font-size: 13px;
     }
 }
