@@ -5,7 +5,7 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
-
+{% block extra_title %} - {{ product.category.friendly_name }} Summary {% endblock %}
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
