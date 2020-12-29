@@ -42,3 +42,9 @@ select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
 }
+
+@media (max-width: 400px) {
+    p.mb-0 {
+    font-size: 11.8px;
+    }
+}

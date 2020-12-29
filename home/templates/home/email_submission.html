@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'checkout/css/home.css' %}">
 {% endblock %}
 {% block extra_title %} - Report {% endblock %}
 {% block page_header %}
@@ -15,29 +15,36 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class=" col-12 col-md-8">
             <div class="text-center">
-                <h1>Email Submission</h1>
+                <h1 class="logo-font">Email Submission</h1>
                 <p>Having issues with your order? Having difficulty logging on? there is an issue with the website?</p>
                 <p>Please send us an email and we'll look into it and get back to you.</p>
             </div>
             <form method="post" action="{% url 'email_page' %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+                    <label>Email address</label>
+                    <input type="email" class="form-control rounded-0 border-0" name="email" placeholder="name@example.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Subject</label>
-                    <input type="subject" class="form-control" name="subject" required>
+                    <label>Subject</label>
+                    <select name="subject" class="form-control rounded-0 border-0">
+                        <option>I have a problem with my Order.</option>
+                        <option>I would like a refund.</option>
+                        <option>I am having trouble with the site.</option>
+                        <option>I am having problems with my account.</option>
+                        <option>I am having problems registering a account.</option>
+                        <option>Other...</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5" placeholder="Please fill in..." required></textarea>
+                    <label>Message</label>
+                    <textarea class="form-control rounded-0 border-0" name="message" rows="5" placeholder="Please fill in..." required></textarea>
                 </div>
-                <button class="btn" type="submit">Submit</button>
+                <button class="btn btn-pri rounded-0 mb-2" type="submit">Submit Query</button>
             </form>
         </div>
     </div>

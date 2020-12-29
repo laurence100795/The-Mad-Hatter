@@ -21,6 +21,13 @@ body {
     width: 1.5rem;
 }
 
+.fa-plus {
+    color: #fafafa;
+}
+
+.fa-minus {
+    color: #fafafa;
+}
 /* removes default a tag styles */
 a {
     text-decoration: none;
@@ -381,6 +388,9 @@ a:hover
         font-size: 12px;
     }
     .main-logo-nav{
-        font-size: 13px;
+        font-size: 12px;
+    }
+    .toast-body {
+        font-size: 11px;
     }
 }
