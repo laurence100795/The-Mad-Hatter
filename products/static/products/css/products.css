@@ -6,6 +6,16 @@
     margin-bottom: 20px;
 }
 
+/* mobile product container colour*/
+.card-body {
+    background-color: #444444;
+}
+
+.card-footer {
+    background-color: #444444;
+}
+
+/* Bottom product page divider */
 .product_divider {
     border-color: #fafafa;
     width: 85%;

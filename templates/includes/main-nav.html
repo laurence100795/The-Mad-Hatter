@@ -11,7 +11,7 @@
             <div class="dropdown-menu border-0 header-styling" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-style">Product Management</a>
+                        <a href="{% url 'add_product' %}" class="dropdown-item dropdown-style">Product Management</a>
                     {% endif %}
                     <a href="{% url 'profile' %}" class="dropdown-item dropdown-style">My Profile</a>
                     <a href="{% url 'order_page' %}" class="dropdown-item dropdown-style">My Orders</a>
