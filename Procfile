@@ -1,1 +1,1 @@
-web: gunicorn mad_matter.wsgi:application
+web: gunicorn mad_matter:application
