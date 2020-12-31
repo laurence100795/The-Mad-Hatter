@@ -32,7 +32,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(validators=[MinValueValidator(0),
                                  MaxValueValidator(5)],
-                                 max_digits=3, decimal_places=2,
+                                 max_digits=6, decimal_places=2,
                                  null=True, blank=True)
     image_url = models.URLField(max_length=1024, blank=True)
     image = models.ImageField(blank=True)

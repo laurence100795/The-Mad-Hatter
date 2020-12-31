@@ -1,0 +1,1 @@
+web: gunicorn mad_matter.wsgi:application
