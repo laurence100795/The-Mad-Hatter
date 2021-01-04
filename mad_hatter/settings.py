@@ -134,10 +134,10 @@ WSGI_APPLICATION = 'mad_hatter.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 # if 'DATABASE_URL' in os.environ:
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://aslsydcuamxqto:270293fdae4949bdbea9314b383cb2d5428750501aba946857c7630699d3f14f@ec2-54-170-123-247.eu-west-1.compute.amazonaws.com:5432/d68tvlbq2rnsbo')
-}
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 # else:
 #    DATABASES = {
 #        'default': {
