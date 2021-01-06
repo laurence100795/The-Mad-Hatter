@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['mad-hatter-laurence100795.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['localhost', 'https://mad-hatter-laurence100795.herokuapp.com']
 
 # Application definition
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -100,8 +101,10 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
-SITE_ID = 1
+if 'DEVELOPMENT' in os.environ:
+    SITE_ID = 2
+else:
+    SITE_ID = 4
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -114,8 +117,6 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -140,7 +141,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
@@ -190,7 +191,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # AWS
 if 'USE_AWS' in os.environ:
     # Cache control
-    AWS_S3_Object_PARAMETERS = {
+    AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
@@ -218,11 +219,10 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-DEFAULT_FROM_EMAIL = "hattersupport@gmail.com"
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
+    DEFAULT_FROM_EMAIL = "hattersupport@gmail.com"
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
