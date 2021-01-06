@@ -101,10 +101,8 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-if 'DEVELOPMENT' in os.environ:
-    SITE_ID = 2
-else:
-    SITE_ID = 4
+
+SITE_ID = 2
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
